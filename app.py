@@ -4,7 +4,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 
 # --- CONFIGURATION ---
-BATCH_NUMBER = 1 
+BATCH_NUMBER = 2
 CSV_FILE = f'survey_batch_{BATCH_NUMBER}.csv'
 SHEET_NAME = 'Survey_Results_Master'
 TAB_NAME = f'Results_{BATCH_NUMBER}'
@@ -93,4 +93,5 @@ else:
 total = len(df_questions)
 done = len(answered_ids)
 st.sidebar.write(f"**Batch Progress: {done} / {total}**")
+
 st.sidebar.progress(done / total)
